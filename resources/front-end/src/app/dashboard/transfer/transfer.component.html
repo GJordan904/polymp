@@ -1,0 +1,34 @@
+<div class="widget-container">
+    <div class="widget-row">
+        <div class="size third">
+            <div class="card widget">
+                <div class="card-header">
+                    <h4>Storage</h4>
+                </div>
+                <div class="card-body">
+                    <div class="storage-label">
+                        {{storage.used / storage.max | percent }}
+                        <div class="sub">Used</div>
+                    </div>
+                    <round-progress [max]="storage.max" [current]="storage.used"></round-progress>
+                </div>
+            </div>
+        </div>
+        <div class="size two-third">
+            <div id="dz" class="card poly-dz" dropzone>
+                <div class="inner">
+                    <i class="material-icons md-6 md-blue">cloud_upload</i>
+                    <div class="title">
+                        Drop Files or Click <br>To Upload
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="widget-row">
+        <div class="size full">
+            <dropzone-previews></dropzone-previews>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+@import '../../scss/variables';
+@import "~bootstrap/scss/mixins";
+
+.login-row {
+  @include make-row;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  margin: 84px 0 0 0;
+
+  .login-col {
+    @include make-col-ready;
+    @include make-col(12);
+    margin-left: auto;
+    margin-right: auto;
+    @include media-breakpoint-up(xs) {
+      @include make-col(10);
+    }
+    @include media-breakpoint-up(md) {
+      @include make-col(8);
+    }
+  }
+}

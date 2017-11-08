@@ -1,0 +1,39 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.storage-label {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -25%);
+  text-align: center;
+  font-size: 3.5rem;
+
+  .sub {
+    font-size: 1.25rem;
+    color: $text-bold
+  }
+}
+.poly-dz {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  @include background-radial-gradient(ellipse, farthest-side, 10%, 0,
+          $bg-gradient-color-3 20%, $bg-gradient-color-4
+  );
+  @include elevation-3;
+  @include elevation-hover;
+
+  .inner {
+    text-align: center;
+    border: 1px dashed $blue;
+
+    .title {
+      font-size: 2.75rem;
+
+      .sub {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}

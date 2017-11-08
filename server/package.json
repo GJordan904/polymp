@@ -1,0 +1,29 @@
+{
+  "name": "polymp-event-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "./dist/cli/index.js start"
+  },
+  "author": "Grant Jordan",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/ioredis": "0.0.27",
+    "@types/socket.io": "^1.4.31"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "express": "^4.14.0",
+    "inquirer": "^1.1.3",
+    "ioredis": "^1.15.1",
+    "lodash": "^4.12.0",
+    "request": "^2.72.0",
+    "socket.io": "^2.0.1",
+    "sqlite3": "^3.1.8",
+    "yargs": "^5.0.0"
+  }
+}

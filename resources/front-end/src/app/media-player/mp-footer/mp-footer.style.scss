@@ -1,0 +1,18 @@
+@import "../../scss/variables";
+
+.mp-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: $widget-bg;
+  padding: .75em 0;
+
+
+  i {
+    color: $white-dark;
+    margin: 0 .5em;
+    &:hover {
+      color: rgba($bg-gradient-color-1, .75);
+    }
+  }
+}

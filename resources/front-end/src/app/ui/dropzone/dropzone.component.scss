@@ -1,0 +1,41 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+@import '~bootstrap/scss/list-group';
+
+.dz-preview {
+  @extend .list-group-item-action;
+  display: flex;
+  align-items: flex-start;
+
+  .stats {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dz-thumbnail {
+    width: 25%;
+
+    image {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+.que, .done {
+  @extend .list-group;
+}
+.que {
+  @include make-col-ready;
+
+  .dz-preview {
+
+  }
+}
+
+.done {
+  @include make-col-ready;
+
+  .dz-preview {
+
+  }
+}

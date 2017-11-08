@@ -1,0 +1,22 @@
+<widget [options]="latestOptions" (loadCB)="onLoad($event)">
+    <p class="search-filter">
+        <input *ngIf="config.filtering"
+               [ngTableFiltering]="config.filtering"
+               (tableChanged)="onChangeTable(config)"
+               class="form-control input-transparent"
+               placeholder="Filter Table" type="text">
+    </p>
+    <ng-table [config]="config"
+              (tableChanged)="onChangeTable(config)"
+              [rows]="rows" [columns]="columns">
+    </ng-table>
+    <ngb-pagination class="pagination mt-1"
+                    [(page)]="page"
+                    [pageSize]="maxSize"
+                    [collectionSize]="length"
+                    [maxSize]="maxSize"
+                    [boundaryLinks]="true"
+                    (pageChange)="changePage($event)">
+    </ngb-pagination>
+    <pre class="card card-block card-header" [ngStyle]="pagingConfigStyle">Page: {{page}} / {{numPages}}</pre>
+</widget>

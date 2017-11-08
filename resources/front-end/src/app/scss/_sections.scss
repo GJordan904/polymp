@@ -1,0 +1,18 @@
+.page-header {
+  @include section(url("/assets/img/backgrounds/landing-header.jpg") center fixed no-repeat, cover, false);
+  height: 100vh;
+}
+.trans-section {
+  @include section(linear-gradient(180deg, rgba(35, 50, 75, 0.64), transparent, rgba(35, 50, 75, 0.64)), cover, false);
+}
+
+.red-space-section {
+  @include section(url("/assets/img/backgrounds/red-space.jpg") top, auto, false);
+
+  font-size: 2rem;
+}
+
+.section {
+  @include section(transparent, cover, true);
+}
+

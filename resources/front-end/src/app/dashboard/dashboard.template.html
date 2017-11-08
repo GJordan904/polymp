@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row">
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="navbar-brand">
+        <div [ngClass]="{'menu-toggler': true, open: sidebarOpen}" (click)="sidebarOpen = !sidebarOpen">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+        <a class="d-inline-flex align-items-center" routerLink="/dashboard" href="#">
+          <img src="/assets/img/logo-cloud.png" class="d-inline-block" alt="">
+        </a>
+      </div>
+    </nav>
+  </div>
+  <div class="row flex-nowrap">
+
+    <nav [ngClass]="{sidebar: true, open: sidebarOpen}">
+      <div class="list-group">
+        <a class="list-group-item list-group-item-action" routerLink="home" routerLinkActive="active">Home</a>
+        <a class="list-group-item list-group-item-action" routerLink="files" routerLinkActive="active">Files</a>
+        <a class="list-group-item list-group-item-action" routerLink="share" routerLinkActive="active">Share</a>
+        <a class="list-group-item list-group-item-action" routerLink="transfer" routerLinkActive="active">Transfer</a>
+      </div>
+    </nav>
+
+    <div [ngClass]="{'main-content': true, open: sidebarOpen}">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</div>
+

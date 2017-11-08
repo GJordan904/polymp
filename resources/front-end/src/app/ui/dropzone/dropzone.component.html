@@ -1,0 +1,30 @@
+<div class="card widget">
+    <div class="col-xs-12 col-sm-6">
+        <div class="que">
+            <div *ngFor="let item of que" class="dz-preview">
+                <div class="dz-thumbnail">
+                    <img [src]="item.thumbnail">
+                </div>
+                <div class="dz-name">{{ item.name }}</div>
+                <div class="dz-status">{{ item.status }}</div>
+                <div class="progress">
+                    <div [style.width]="item.progress + '%'" class="progress-bar" role="progressbar" aria-valuenow="0"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="dz-count">{{ item.bytesSent | BytesTransform }} / {{ item.size | BytesTransform }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+        <div class="done">
+            <div *ngFor="let item of done" class="dz-preview">
+                <div class="dz-thumbnail">
+                    <img [src]="item.thumbnail">
+                </div>
+                <div class="dz-name">{{ item.name }}</div>
+                <div class="dz-status">{{ item.status }}</div>
+                <div class="dz-count">{{ item.bytesSent | BytesTransform }} / {{ item.size | BytesTransform }}</div>
+            </div>
+        </div>
+    </div>
+</div>

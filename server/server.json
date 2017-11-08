@@ -1,0 +1,36 @@
+{
+	"authHost": "http://poly.loc",
+	"authEndpoint": "/broadcasting/auth",
+	"clients": [
+		{
+			"appId": "53fc305679c25561",
+			"key": "9af22f1e728a6528958dd1f6095cdc75"
+		}
+	],
+	"database": "redis",
+	"databaseConfig": {
+		"redis": {
+			"port": 6379,
+			"host": "127.0.0.1",
+			"family": 4,
+			"password": "sK4^DSD)_3kd0^_dGDr6/()@#Mf4%KSD()4=+sdf",
+			"db": 1
+		},
+		"sqlite": {}
+	},
+	"devMode": true,
+	"host": null,
+	"port": "6001",
+	"protocol": "http",
+	"socketio": {},
+	"sslCertPath": "",
+	"sslKeyPath": "",
+	"sslCertChainPath": "",
+	"sslPassphrase": "",
+	"apiOriginAllow": {
+		"allowCors": false,
+		"allowOrigin": "",
+		"allowMethods": "",
+		"allowHeaders": ""
+	}
+}

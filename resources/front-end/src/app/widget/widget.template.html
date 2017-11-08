@@ -1,0 +1,43 @@
+<div [ngClass]="{'card widget': true, expanded: state === 'expanded', collapsed: state === 'collapsed'}"
+     [@state]="state">
+    <div class="card-header">
+        <div class="row justify-content-between align-items-center pl-1 pr-1">
+            <h5>{{settings.title}}</h5>
+            <div class="widget-controls">
+                <div *ngIf="settings.show.reload"
+                     (click)="loadData(settings.load)"
+                     class="widget-control">
+                    <i class="material-icons">refresh</i>
+                </div>
+                <div *ngIf="state === 'collapsed'"
+                     (click)="changeState('expanded')"
+                     class="widget-control">
+                    <i class="material-icons">add</i>
+                </div>
+                <div *ngIf="state === 'expanded' || state === 'fullscreen'"
+                     (click)="changeState('collapsed')"
+                     class="widget-control">
+                    <i class="material-icons">remove</i>
+                </div>
+                <div *ngIf="options.show.fullScreen">
+                    <div *ngIf="state !== 'fullscreen'"
+                         (click)="changeState('fullscreen')"
+                         class="widget-control">
+                        <i class="material-icons">fullscreen</i>
+                    </div>
+                    <div *ngIf="state === 'fullscreen'"
+                         (click)="changeState('expanded')"
+                         class="widget-control">
+                        <i class="material-icons">fullscreen_exit</i>
+                    </div>
+                </div>
+                <div *ngIf="settings.show.close" class="widget-control">
+                    <i class="material-icons">close</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <ng-content></ng-content>
+    </div>
+</div>

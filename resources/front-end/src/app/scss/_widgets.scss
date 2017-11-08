@@ -1,0 +1,101 @@
+.widget-container {
+  @include make-container;
+  padding: 2rem;
+
+  .widget-row {
+    @include make-row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .widget-column {
+    @include make-row;
+    flex-direction: column;
+  }
+
+  .size {
+    @include make-col-ready;
+    &.full {
+      @include make-col(12);
+    }
+    &.half {
+      @include make-col(6);
+    }
+    &.third {
+      @include make-col(4);
+    }
+    &.quarter {
+      @include make-col(3);
+    }
+    &.two-third {
+      @include make-col(8);
+    }
+    @include  media-breakpoint-down(sm) {
+      &.third {
+        @include make-col(12);
+      }
+      &.quarter {
+        @include make-col(12);
+      }
+    }
+    @include  media-breakpoint-down(md) {
+      &.two-third {
+        @include make-col(12);
+      }
+      &.half {
+        @include make-col(12);
+      }
+      &.third {
+        @include make-col(6);
+      }
+      &.quarter {
+        @include make-col(6);
+      }
+    }
+  }
+
+  .widget {
+    @include background-radial-gradient(ellipse, farthest-side, 10%, 0,
+            $bg-gradient-color-3 20%, $bg-gradient-color-4
+    );
+    @include elevation-3;
+    @include elevation-hover;
+
+    .card-header {
+      @include make-container;
+      color: $blue;
+      font-weight: $font-weight-bold;
+      padding: .5rem 1.15rem;
+
+      h1, h2, h3, h4, h5, a {
+        color: $blue;
+        font-weight: $font-weight-bold;
+        display: inline;
+        margin: 0;
+      }
+
+      .widget-controls {
+        display: inline-flex;
+
+        .widget-control {
+          cursor: pointer;
+          .material-icons { margin: 0 .25rem};
+        }
+      }
+    }
+
+    .card-body {
+      padding: 0 1rem;
+
+      input {
+        margin: 1rem 0;
+      }
+    }
+
+  }
+}

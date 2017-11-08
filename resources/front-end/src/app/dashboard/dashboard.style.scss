@@ -1,0 +1,109 @@
+@import "../scss/variables";
+@import "../scss/mixins";
+@import "~bootstrap/scss/mixins";
+
+.sidebar {
+  @include background-radial-gradient(ellipse, farthest-side, 10%, 0, $bg-gradient-color-1 20%, $bg-gradient-color-2);
+  @include make-col-ready;
+  width: 0;
+  height: calc(100vh - 57px);
+  transition: all 350ms ease-in-out;
+  padding: 0;
+
+  &.open {
+    width: 80%;
+    @include media-breakpoint-up(sm) {
+      width: 40%
+    }
+    @include media-breakpoint-up(lg) {
+      width: 35%
+    }
+    @include media-breakpoint-up(xl) {
+      width: 20%
+    }
+    .list-group {
+      width: 100%;
+    }
+  }
+
+  .list-group {
+    width: 0;
+    overflow: hidden;
+    transition: width 350ms ease-in;
+
+    .list-group-item {
+      background-color: transparent;
+    }
+    .list-group-item-action {
+      color: rgba($blue, .5);
+
+      &:hover {
+        background-color: rgba(0, 0, 0, .05);
+      }
+    }
+  }
+}
+
+.main-content {
+  @include make-col-ready;
+  padding: 0;
+  transition: all 350ms ease-in-out;
+
+  &.open {
+    width: 20%;
+    @include media-breakpoint-up(sm) {
+      width: 65%
+    }
+    @include media-breakpoint-up(lg) {
+      width: 85%
+    }
+  }
+}
+
+.navbar {
+  padding: 0 1rem;
+  width: 100%;
+
+  .navbar-brand {
+    display: inline-flex;
+
+    .menu-toggler {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: all .35s ease-in-out;
+
+      .line {
+        width: 2rem;
+        height: 2px;
+        border-radius: $border-radius-lg;
+        background-color: rgba($blue, .5);
+        display: block;
+        margin: .15rem auto;
+        transition: all .35s ease-in-out;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.open {
+        transform: rotate(90deg);
+
+        .line:nth-child(1) {
+          width: 30px
+        }
+
+        .line:nth-child(2) {
+          width: 40px
+        }
+      }
+    }
+
+    img {
+      height: 50px;
+      width: auto;
+      margin-left: 3rem;
+    }
+  }
+}

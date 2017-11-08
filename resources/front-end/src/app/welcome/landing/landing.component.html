@@ -1,0 +1,147 @@
+<div class="page-header">
+  <div class="logo-row">
+    <div class="logo"></div>
+  </div>
+</div>
+<section class="trans-section">
+  <div class="row justify-content-around">
+    <div class="col-5">
+      <h1>Cloud Media <span class="next">Storage & Player</span></h1>
+      <hr>
+      <p>
+        <span class="lead">Poly MP</span> is a cloud media solution that provides a single, secure, location for storing,
+        sharing, and playing back all your files.
+      </p>
+      <p>
+        <span class="lead">Storage</span> is offered in various quantities depending on your needs and is easily
+        scalable.
+      </p>
+      <p>
+        <span class="lead">Media Player</span> capable of playing back virtually any media format is available with free registration.
+      </p>
+    </div>
+    <div class="col-5">
+      <div class="infograph" >
+        <img src="/assets/img/cloud-storage.png">
+      </div>
+    </div>
+  </div>
+  <div class="connector">
+    <div class="col-6">
+      <object type="image/svg+xml" data="/assets/img/gradient-connectors1.svg"></object>
+    </div>
+  </div>
+  <div class="row justify-content-around">
+    <div class="col-5">
+      <div class="infograph">
+        <img src="/assets/img/all-devices.png">
+      </div>
+    </div>
+    <div class="col-5">
+      <h1><span class="next">Any Device</span> Anywhere</h1>
+      <hr>
+      <p>
+        <span class="lead">Adaptive Streaming</span> technology is used to provide the smoothest quality audio
+        and video experience possible.
+      </p>
+      <p>
+        <span class="lead">Cloud Servers</span> offer the ability to access your media at anytime from anywhere
+        with a network connection.
+      </p>
+      <p>
+        <span class="lead">Social Sharing,</span> upload your videos and easily post them to your favorite social
+        network, letting Poly MP handle transcoding to the proper format.
+      </p>
+    </div>
+  </div>
+  <div class="row justify-content-around align-items-center">
+    <div class="col-5">
+      <h1>Register For <span>FREE</span></h1>
+      <hr>
+      <p>
+        Poly MP offers an easily scalable membership system that starts with its free membership. No credit card
+        required, simply fill in the email and password fields in the form to the right. Our free membership
+        includes the following:
+      </p>
+      <ul>
+        <li>2GB of Storage Space</li>
+        <li>Media Player</li>
+        <li>Customizable Dashboard</li>
+        <li>Easy Sharing</li>
+      </ul>
+      <p class="lead">See our <a routerLink="/welcome/pricing">pricing page</a> for more information</p>
+    </div>
+    <div class="col-5">
+      <logister view="dual"></logister>
+    </div>
+  </div>
+</section>
+
+<section class="red-space-section" [parallax]="plaxHeaderConf">
+  <div class="content">
+    <anim-in-view classes="row mt-3 animated fadeInDown duration-15">
+      <i class="material-icons md-7 md-brand">cloud_done</i>
+      <div class="col">
+        <h1><span>Safe</span> In The Cloud</h1>
+        <p>
+          Store and access all your media through our secure servers. We utilize a major cloud
+          computing server network, capable of almost constant up-time.
+        </p>
+      </div>
+    </anim-in-view>
+
+    <anim-in-view classes="row mt-3 animated fadeInDown duration-15">
+      <i class="material-icons md-7 md-brand">share</i>
+      <div class="col">
+        <h1>Easily <span>Share</span> Media</h1>
+        <p>
+          Share your pictures and videos with your friends and family. With Poly MP,
+          you can upload any video format and seamlessly share it on your favorite social network or directly through your dashboard.
+        </p>
+      </div>
+    </anim-in-view>
+
+    <anim-in-view classes="row mt-3 animated fadeInDown duration-15">
+      <i class="material-icons md-7 md-brand">cloud_done</i>
+      <div class="col">
+        <h1>Play Virtually <span>Anything</span></h1>
+        <p>
+          You can store any file type and playback virtually any media type. If you find a format
+          we don't currently support, please let us know.
+        </p>
+      </div>
+    </anim-in-view>
+  </div>
+</section>
+
+<section class="trans-section">
+  <div class="centered-header">
+    <h1 class="text-center"><span>NOW</span><br>All Your Media</h1>
+  </div>
+  <div class="icon-row" elInView (show)="fillIcons($event)">
+    <div class="icon" *ngFor="let icon of fileIcons">
+      <img [src]="icon" class="img-fluid">
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="vertical-divider"></div>
+  </div>
+  <div class="centered-header">
+    <h1 class="text-center"><span>ON</span><br>All Your Devices</h1>
+  </div>
+
+  <div class="icon-row">
+    <div class="icon" *ngFor="let icon of deviceIcons">
+      <img [src]="icon" class="img-fluid">
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="vertical-divider"></div>
+  </div>
+  <div class="centered-header">
+    <h1 class="text-center"><span>IN</span><br>One Place</h1>
+  </div>
+  <div class="logo-row short">
+    <div class="logo"></div>
+  </div>
+</section>

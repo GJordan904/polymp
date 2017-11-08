@@ -1,0 +1,102 @@
+<div [ngSwitch]="view">
+
+  <div *ngSwitchCase="'dual'">
+
+    <app-card-tabs adlCardClasses="my-card pulsing" adlNavClasses="nav-fill">
+
+      <app-card-tab title="Register">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col">
+              <form [formGroup]="registerForm" novalidate>
+                <div class="form-group">
+                  <input type="email" placeholder="Email" class="form-control form-control-lg" formControlName="email">
+                  <div formGroupName="passwords">
+                    <input type="password" placeholder="Password" class="form-control form-control-lg" formControlName="password">
+                    <input type="password" placeholder="Re-Type Password" class="form-control form-control-lg" formControlName="rePassword">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button type="submit"
+                          [disabled]="registerForm.pristine" class="btn btn-success btn-block">Register</button>
+                  <button type="button" class="btn btn-block btn-dark btn-social"><img src="assets/img/facebook.svg"></button>
+                  <button type="button" class="btn btn-block btn-dark btn-social"><img src="assets/img/twitter.svg"></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </app-card-tab>
+
+      <app-card-tab title="Login">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col">
+              <form [formGroup]="loginForm" novalidate>
+                <div class="form-group">
+                  <input type="email" placeholder="Email" class="form-control form-control-lg" formControlName="email">
+                  <input type="password" placeholder="Password" class="form-control form-control-lg" formControlName="password">
+                </div>
+                <div class="form-check">
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" formControlName="remember">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">Remember Me</span>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <button type="button"
+                          (click)="login()"
+                          [disabled]="loginForm.pristine || loginForm.invalid"
+                          class="btn btn-success btn-block">Login</button>
+                  <button type="button" class="btn btn-block btn-dark btn-social"><img src="assets/img/facebook.svg"></button>
+                  <button type="button" class="btn btn-block btn-dark btn-social"><img src="assets/img/twitter.svg"></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </app-card-tab>
+
+    </app-card-tabs>
+
+  </div>
+
+  <div *ngSwitchCase="'login'">
+    <div class="card my-card">
+      <div class="card-header">
+        <h1>Login</h1>
+      </div>
+      <div class="card-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col">
+              <form [formGroup]="loginForm" novalidate>
+                <div class="form-group">
+                  <input type="email" placeholder="Email" class="form-control form-control-lg" formControlName="email">
+                  <input type="password" placeholder="Password" class="form-control form-control-lg" formControlName="password">
+                </div>
+                <div class="form-check">
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" formControlName="remember">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">Remember Me</span>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <button type="button"
+                          (click)="login()"
+                          [disabled]="loginForm.pristine || loginForm.invalid"
+                          class="btn btn-success btn-block">Login</button>
+                  <button type="button" class="btn btn-block btn-dark btn-social"><img src="assets/img/facebook.svg"></button>
+                  <button type="button" class="btn btn-block btn-dark btn-social"><img src="assets/img/twitter.svg"></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
